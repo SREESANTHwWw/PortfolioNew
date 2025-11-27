@@ -19,7 +19,7 @@ const Contact = () => {
           />
           <input
             type="email"
-            placeholder="Your Email"
+            placeholder="Your EmaiL"
             className="sm:w-96 w-62 h-10 rounded-lg px-4 border-2 text-white outline-none"
           />
           <textarea
