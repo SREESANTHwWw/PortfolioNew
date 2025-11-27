@@ -2,8 +2,8 @@
 
 const Contact = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div className="flex flex-col w-[75%] gap-9">
+    <div className="w-full h-full flex justify-center items-center  ">
+      <div className="flex flex-col w-[75%] gap-9 ">
 
         <h2 className="group text-4xl text-white font-semibold transition duration-300 font-Saira">
 
@@ -11,7 +11,7 @@ const Contact = () => {
           <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"> </span>
         </h2>
 
-        <div className="flex flex-col items-center w-full gap-10 p-10 mt-10 border-2 border-white rounded-lg">
+        <div className="flex flex-col bg-black/70 items-center w-full gap-10 p-10 mt-10 border-2 border-white rounded-lg">
           <input
             type="text"
             placeholder="Your Name"

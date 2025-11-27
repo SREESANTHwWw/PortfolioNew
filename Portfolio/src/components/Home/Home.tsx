@@ -25,7 +25,7 @@ const Home = () => {
             />
           </p>
           <div className="flex gap-20 mt-10  text-3xl sm:justify-start justify-center">
-            <button className="cursor-pointer"> <a href="https://github.com/SREESANTHwWw"><BsGithub/></a></button>
+          <button className="cursor-pointer"> <a href="https://github.com/SREESANTHwWw"><BsGithub/></a></button>
           <button className="cursor-pointer"><a href="https://www.linkedin.com/in/sreesanth-m-a09162229/"><FaLinkedin/></a></button>
           <button className="cursor-pointer" ><a href="https://x.com/BenfattoGa98605"><FaXTwitter/></a> </button>
 
