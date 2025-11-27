@@ -39,10 +39,10 @@ const Contact = () => {
         {/* FORM START */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col bg-black/70 items-center w-full gap-10 p-10 mt-10 border-2 border-white rounded-lg"
+          className="flex flex-col bg-black/70 items-center sm:rounded-bl-full rounded-2xl  sm:rounded-tr-full sm:rounded-tl-full sm:rounded-br-full w-full gap-10 p-10 mt-10 border-2 border-white "
         >
           <input
-            type="text"
+            type="text" 
             placeholder="Your Name"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}

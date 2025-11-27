@@ -56,9 +56,10 @@ const About = () => {
   return (
     <div className="w-full h-screen flex justify-center   sm:p-8 p-5 ">
       <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-14 gap-7 max-w-6xl text-white">
-        <div className="grid grid-cols-1  ">
-          <div className="">
-            <div className="flex justify-center mb-5 ">
+        
+        <div className="grid grid-cols-1 bg-black/70 rounded-2xl  ">
+          <div className="  px-5 rounded-2xl ">
+            <div className="flex justify-center mb-5 p-4 ">
               <h2 className="group text-4xl text-white font-semibold transition duration-300 font-Saira">About Me
                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
               </h2>
@@ -71,7 +72,7 @@ const About = () => {
               interfaces that provide seamless user experiences.
             </p>
           </div>
-          <div className="grid items-start    ">
+          <div className="grid items-start h-20 p-6    ">
             <button className="w-full cursor-pointer sm:h-16 h-10 rounded-2xl bg-amber-50 text-black sm:text-2xl md:text-3xl text-xl font-Saira font-bold "
             onClick={downloadResume}>
               {" "}
@@ -79,8 +80,7 @@ const About = () => {
             </button>
           </div>
         </div>
-
-        <div className="grid grid-cols-3 sm:grid-cols-4 px-4   sm:gap-10 gap-6 ">
+          <div className="grid grid-cols-5 sm:grid-cols-4    sm:gap-10 gap-6 ">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -91,6 +91,8 @@ const About = () => {
             </motion.div>
           ))}
         </div>
+
+      
       </div>
       
         

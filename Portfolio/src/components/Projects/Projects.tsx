@@ -55,7 +55,7 @@ const Projects = () => {
                 className="min-w-full max-w-full grid sm:grid-cols-2 grid-cols-1 gap-8 p-6"
               >
                 {/* Left: Details */}
-                <div className="flex flex-col p-10 gap-10 ">
+                <div className="flex flex-col p-10 gap-10 bg-black/70 rounded-2xl ">
                   <div className="flex justify-between">
                     <h3 className="sm:text-3xl text-2xl font-bold mb-4 font-Saira">
                       {project.title}
@@ -81,7 +81,7 @@ const Projects = () => {
 
                 {/* Right: One Image */}
                 {/* Right: Two Images (Top & Bottom) */}
-                <div className="grid sm:grid-cols-1 grid-cols-1 gap-5">
+                <div className="grid sm:grid-cols-1 grid-cols-1 gap-5 ">
                   <img
                     src={project.image1}
                     alt={project.title}
