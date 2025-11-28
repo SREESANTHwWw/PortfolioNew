@@ -6,7 +6,6 @@ const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   console.log(isMobile);
-  
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
@@ -44,6 +43,11 @@ const NavBar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const BarFun = () => {
+    setOpen(true);
+    setIsScrolled(false);
+  };
+
   return (
     <>
       <div
@@ -53,12 +57,17 @@ const NavBar = () => {
         `}
       >
         <div className="flex items-center w-[85%] justify-between gap-10">
-
           <div className={`font-bold font-sans sm:text-3xl text-xl text-white`}>
             <h1 className="font-[Dancing_Script]">SREESANTH M</h1>
           </div>
 
-          {isOpen && <SideBar isOpen={isOpen} onClose={() => setOpen(false)} />}
+          {isOpen && (
+            <SideBar
+              isOpen={isOpen}
+              onClose={() => setOpen(false)}
+              isScroller={isScrolled}
+            />
+          )}
 
           <div className="grid-cols-4 items-center gap-6 font-Saira sm:grid hidden">
             {["Home", "About", "Projects", "Contact"].map((item) => (
@@ -77,10 +86,7 @@ const NavBar = () => {
             ))}
           </div>
 
-          <button
-            className="sm:hidden text-3xl text-white"
-            onClick={() => setOpen(true)}
-          >
+          <button className="sm:hidden text-3xl text-white" onClick={BarFun}>
             <VscThreeBars size={32} />
           </button>
         </div>

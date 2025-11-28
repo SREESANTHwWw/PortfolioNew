@@ -1,6 +1,6 @@
-import  { useState } from "react";
+import { useState } from "react";
 
-import { FaArrowCircleRight ,FaArrowCircleLeft  } from "react-icons/fa";
+import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 
 const Projects = () => {
   const [index, setIndex] = useState(0);
@@ -10,7 +10,7 @@ const Projects = () => {
       id: 1,
       title: "Dils Trades",
       description:
-        "Dils Trades is a full-featured e-commerce web application built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). It provides a seamless online shopping experience with user authentication, secure payment options, and robust product management features..",
+        "Dils Trades is a full-featured e-commerce web application built using the MERN stack, designed to deliver a seamless and secure online shopping experience. The platform includes robust user authentication with JWT, a complete product management system for adding, updating, and controlling inventory, and an intuitive shopping cart with order processing and integrated payment options. Users can manage their profiles, track orders, and browse products through advanced search and filtering features, while administrators benefit from a powerful dashboard to manage products, users, and orders efficiently. With a fully responsive React interface, optimized Express.js APIs, and secure MongoDB data handling, Dils Trades demonstrates strong full-stack development skills, modern UI design, and scalable application architecture suitable for real-world e-commerce solutions.",
       image1: "/Dils.png",
       image2: "/dils2.png",
       link: "https://dils-trades.onrender.com/",
@@ -19,7 +19,7 @@ const Projects = () => {
       id: 2,
       title: "RettroFit",
       description:
-        "Developed a web platform that provides reverse engineering solutions for obsolete, damaged, or unavailable machine parts. The project focuses on redesigning and manufacturing critical components when original manufacturers no longer produce them, solving challenges like missing technical drawings and urgent replacement needs",
+        "RettroFit is a specialized web platform developed to provide reverse engineering solutions for obsolete, damaged, or unavailable machine parts. The system enables industries to redesign and reproduce critical components when original manufacturers no longer support them, effectively addressing issues such as missing technical drawings, unavailable spare parts, and urgent replacement demands. RettroFit streamlines the process by collecting detailed part information, enabling engineers to analyze, redesign, and deliver accurate, manufacturable models, ensuring minimal downtime and improved operational efficiency for clients.",
       image1: "/rettro.png",
       image2: "/retto2.png",
       link: "https://rettrofit-fd.onrender.com/",
@@ -37,9 +37,9 @@ const Projects = () => {
   return (
     <div className="w-full h-full flex justify-center  text-white">
       <div className="flex flex-col items-center gap-10 mt-20">
-        <h2 className=" group text-4xl text-white transition duration-300 font-Saira font-semibold ">Projects
-
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+        <h2 className=" group text-4xl text-white transition duration-300 font-Saira font-semibold ">
+          Projects
+          <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
         </h2>
 
         {/* Slider Container */}
