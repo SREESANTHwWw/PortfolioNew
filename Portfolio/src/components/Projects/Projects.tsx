@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useInView, motion } from "framer-motion";
 
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 
@@ -10,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: "Dils Trades",
       description:
-        "Dils Trades is a full-featured e-commerce web application built using the MERN stack, designed to deliver a seamless and secure online shopping experience. The platform includes robust user authentication with JWT, a complete product management system for adding, updating, and controlling inventory, and an intuitive shopping cart with order processing and integrated payment options. Users can manage their profiles, track orders, and browse products through advanced search and filtering features, while administrators benefit from a powerful dashboard to manage products, users, and orders efficiently. With a fully responsive React interface, optimized Express.js APIs, and secure MongoDB data handling, Dils Trades demonstrates strong full-stack development skills, modern UI design, and scalable application architecture suitable for real-world e-commerce solutions.",
+        " Dils Trades is a full-featured MERN e-commerce application offering secure authentication, complete product management, and a smooth shopping experience. It includes a robust cart system, order processing with payment integration, user profile management, and advanced search/filtering. Admins get a powerful dashboard to manage products, users, and orders. With a responsive React UI, optimized Express APIs, and secure MongoDB data handling, Dils Trades showcases strong full-stack skills and scalable e-commerce architecture.",
       image1: "/Dils.png",
       image2: "/dils2.png",
       link: "https://dils-trades.onrender.com/",
@@ -34,71 +35,81 @@ const Projects = () => {
     setIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
+  // ⬇️ Scroll animation setup
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-150px" });
+  const cardVar = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="w-full h-full flex justify-center  text-white">
+    <div className="w-full h-full flex justify-center text-white" ref={ref}>
       <div className="flex flex-col items-center gap-10 mt-20">
-        <h2 className=" group text-4xl text-white transition duration-300 font-Saira font-semibold ">
+        <h2 className="group text-4xl text-white transition duration-300 font-Saira font-semibold">
           Projects
           <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
         </h2>
 
         {/* Slider Container */}
-        <div className="w-full max-w-7xl overflow-hidden relative  ">
+        <div className="w-full max-w-7xl overflow-hidden relative">
           {/* Track */}
           <div
-            className="flex transition-transform duration-500 "
+            className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {projects.map((project) => (
-              <div
+              <motion.div
+                variants={cardVar}
+                initial="hidden"
+                animate={isInView ? "show"  : {}}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4 }}
                 key={project.id}
                 className="min-w-full max-w-full grid sm:grid-cols-2 grid-cols-1 gap-8 p-6"
               >
                 {/* Left: Details */}
-                <div className="flex flex-col p-10 gap-10 bg-black/70 rounded-2xl ">
+                <div className="flex flex-col p-10 gap-10 bg-black/70 rounded-2xl">
                   <div className="flex justify-between">
                     <h3 className="sm:text-3xl text-2xl font-bold mb-4 font-Saira">
                       {project.title}
                     </h3>
 
-                    <button className="sm:w-32 w-20 sm:h-10 h-10 rounded-2xl bg-amber-50 text-black sm:text-xl  text-xl font-Saira font-bold ">
-                      {" "}
-                      <a href={project.link}>Vist</a>{" "}
+                    <button className="sm:w-32 w-20 sm:h-10 h-10 rounded-2xl bg-amber-50 text-black sm:text-xl text-xl font-Saira font-bold">
+                      <a href={project.link}>Visit</a>
                     </button>
                   </div>
 
                   <p className="text-white font-Saira">{project.description}</p>
-                  <div className="flex justify-between   gap-6">
-                    <button onClick={prev} className="">
+
+                  <div className="flex justify-between gap-6">
+                    <button onClick={prev}>
                       <FaArrowCircleLeft size={22} />
                     </button>
 
-                    <button onClick={next} className="">
+                    <button onClick={next}>
                       <FaArrowCircleRight size={22} />
                     </button>
                   </div>
                 </div>
 
-                {/* Right: One Image */}
-                {/* Right: Two Images (Top & Bottom) */}
-                <div className="grid sm:grid-cols-1 grid-cols-1 gap-5 ">
+                {/* Right Images */}
+                <div className="grid gap-5">
                   <img
                     src={project.image1}
                     alt={project.title}
-                    className="w-full sm:h-[250px]   object-cover rounded-lg"
+                    className="w-full sm:h-[250px] object-cover rounded-lg"
                   />
 
                   <img
                     src={project.image2}
                     alt={project.title}
-                    className="w-full  h-[250px] object-cover rounded-lg"
+                    className="w-full h-[250px] object-cover rounded-lg"
                   />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-
-          {/* Buttons */}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
-
+import {  motion } from "framer-motion";
 const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -30,7 +30,11 @@ const Contact = () => {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      <div className="flex flex-col w-[75%] gap-9">
+      <motion.div 
+      initial={{ x: 0, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="flex flex-col w-[75%] gap-9">
         <h2 className="group text-4xl text-white font-semibold transition duration-300 font-Saira">
           Contact Me
           <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
@@ -77,7 +81,7 @@ const Contact = () => {
         {/* FORM END */}
 
         <hr className="w-full h-0.5 bg-white mt-10" />
-      </div>
+      </motion.div>
     </div>
   );
 };

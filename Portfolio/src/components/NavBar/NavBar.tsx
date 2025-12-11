@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SideBar from "./SIdeBar";
 import { VscThreeBars } from "react-icons/vsc";
 
+
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
